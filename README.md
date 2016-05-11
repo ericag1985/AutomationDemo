@@ -56,7 +56,7 @@ You can see which tests pass or fail in the log at the bottom of the screen. Pas
     - This option is also the way to run a single test in a suite, in instances where you don't need every test for the page run.
 - A screenshot of the last screen of the test, pass or fail, can be found in /screenshots in the root project folder for easier error/result checking.
     
-*Types of errors:**
+*Types of errors:*
 - If you get an error saying "can not find element", try rerunning the test first. Sometimes the test will time out due to slow site load times.
     - If this continues, double check the corresponding WebElement is correct (sometimes code/identifiers change).
 - If an assertion fails (test to make sure you are on the right page) it will say so in the intellij log and you can use the failure screenshots taken to better pinpoint the problem. (IE: Wrong page title? Wrong page?)
