@@ -9,10 +9,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- * Created by egugliemella on 2/16/16.
- */
-
 public class ScreenshotFactory {
   public static void captureScreenshot(WebDriver driver, String folderName, String screenshotName)
   {

@@ -4,10 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-/**
- * Created by egugliemella on 2/16/16.
- */
-
 public class DriverFactory {
 
   public enum BrowserType {

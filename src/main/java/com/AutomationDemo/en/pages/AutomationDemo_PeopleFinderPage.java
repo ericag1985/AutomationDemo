@@ -5,16 +5,12 @@ import com.AutomationDemo.en.utilities.ScreenshotFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-/**
- * Created by riddelz on 4/24/2016.
- */
-public class AutomatinDemo_PeopleFinderPage extends BasePage{
+public class AutomationDemo_PeopleFinderPage extends BasePage{
 
     //Variables
     @FindBy(css=".btn.btn-primary.btn-xs")
@@ -30,40 +26,48 @@ public class AutomatinDemo_PeopleFinderPage extends BasePage{
     @FindBy(css=".results")
     WebElement container_results;
 
-    //Screenshot folder
-    public String screenshotFolder = "PF_Search_Page_";
+    public String screenshotFolder = "Automation_Demo_";
 
-    public AutomatinDemo_PeopleFinderPage(WebDriver driver) {
+    public AutomationDemo_PeopleFinderPage(WebDriver driver) {
         super(driver);
         this.PAGE_TITLE = "Search - Isobar People Finder";
     }
 
     public void clickFilterButton() {
+        //Click the filters button
         clickElement(button_filters);
-
+        //If the dropdown is already displayed
         if(container_filters.isDisplayed()) {
+            //wait for container
             wait.until(ExpectedConditions.visibilityOf(container_filters));
+            //SH the open container
             ScreenshotFactory.captureScreenshot(driver, screenshotFolder, "shownFilter_");
         } else {
+            //Else wait for element to be invisible
             wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("filter")));
+            //SH hidden container
             ScreenshotFactory.captureScreenshot(driver, screenshotFolder, "hideFilters_");
         }
     }
 
     public void clickNewYorkFilter() {
+        //Click New York filter
         clickElement(option_NewYork);
+        //Wait for results to update
         wait.until(ExpectedConditions.textToBePresentInElement(container_results, "People"));
-        ScreenshotFactory.captureScreenshot(driver, screenshotFolder, "newYorkEmployees_");
     }
 
     public void clickClearSearch() {
+        //Click clear search button
         clickElement(button_clearSearch);
+        //Wait for results to update
         wait.until(ExpectedConditions.textToBePresentInElement(container_results, "People"));
-        ScreenshotFactory.captureScreenshot(driver, screenshotFolder, "clearedSearch_");
     }
 
     public void clickLogoutLink() {
+        //Click the logout link
         clickElement(link_logout);
+        //Wait until we return to login page
         wait.until(ExpectedConditions.titleContains("Login"));
     }
 }

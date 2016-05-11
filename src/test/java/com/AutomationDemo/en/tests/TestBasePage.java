@@ -1,6 +1,5 @@
 package com.AutomationDemo.en.tests;
 
-
 import com.AutomationDemo.en.utilities.DriverFactory;
 import com.AutomationDemo.en.utilities.ScreenshotFactory;
 import org.openqa.selenium.WebDriver;
@@ -12,10 +11,6 @@ import org.testng.annotations.BeforeTest;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-
-/**
- * Created by egugliemella on 2/17/16.
- */
 public class TestBasePage {
 
   //Variables
